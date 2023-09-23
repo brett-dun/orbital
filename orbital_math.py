@@ -8,6 +8,7 @@ if USE_NUMPY:
     cosh = np.cosh
     sin = np.sin
     sinh = np.sinh
+    sqrt = np.sqrt
     pi = np.pi
 else:
     import math
@@ -16,4 +17,5 @@ else:
     cosh = math.cosh
     sin = math.sin
     sinh = math.sinh
+    sqrt = math.sqrt
     pi = math.pi
