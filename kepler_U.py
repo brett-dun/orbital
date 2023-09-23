@@ -7,9 +7,20 @@ from stumpC import stumpC
 from stumpS import stumpS
 
 
-def kepler_U(dt: float, ro: float, vro: float, a: float, error: float = 1e-8, nMax: int = 1000) -> float:
-    mu = 398600
+def kepler_U(mu: float, dt: float, ro: float, vro: float, a: float, error: float = 1e-8, nMax: int = 1000) -> float:
+    """
+    Solution of the Universal Kepler's Equation Using Newton's Method
 
+    :param mu: gravitational parameter (km^3/s^3)
+    :param dt: time since x = 0 (s)
+    :param ro: radial position (km) when x = 0
+    :param vro: radial velocity (km/s) when x = 0
+    :param a: reciprocal of the semimajor axis (1/km)
+    :param error: error tolerance (unitless), defaults to 1e-8
+    :param nMax: maximum number of iterations (unitless), defaults to 1000
+
+    :return: the universal anomaly (km^0.5)
+    """
     x = sqrt(mu) * abs(a) * dt
 
     n = 0
